@@ -1,0 +1,102 @@
+<!-- views/contact.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - MonEntreprise</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-brand">🏢 MonEntreprise</a>
+            <ul class="nav-links">
+                <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Accueil</a></li>
+                <li><a href="/services" class="<%= currentPage === 'services' ? 'active' : '' %>">Nos services</a></li>
+                <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contactez-nous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            
+            <section class="section">
+                <h2>📞 Restons en contact</h2>
+                <p>
+                    Nous sommes à votre écoute pour répondre à toutes vos questions et vous accompagner 
+                    dans la réalisation de vos projets. N'hésitez pas à nous contacter !
+                </p>
+            </section>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <section class="section">
+                    <h2>📋 Formulaire de contact</h2>
+                    <form class="contact-form" action="#" method="POST" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service d’intérêt</label>
+                            <select id="service" name="service" required>
+                                <option value="">-- Sélectionnez un service --</option>
+                                <option value="consulting">Conseil</option>
+                                <option value="development">Développement</option>
+                                <option value="design">Design</option>
+                                <option value="support">Support</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </section>
+
+                <section class="section">
+                    <h2>📍 Nos coordonnées</h2>
+                    <p><strong>Adresse :</strong><br>123 Rue de l’Innovation, 75000 Paris, France</p>
+                    <p><strong>Téléphone :</strong><br><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                    <p><strong>E-mail :</strong><br><a href="mailto:contact@monentreprise.fr">contact@monentreprise.fr</a></p>
+                    <p><strong>Horaires :</strong><br>Du lundi au vendredi, de 9h00 à 17h00</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MonEntreprise. Tous droits réservés.</p>
+        <p>Heures d’ouverture : du lundi au vendredi, de 9h00 à 17h00</p>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.");
+        }
+    </script>
+</body>
+</html>

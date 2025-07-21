@@ -1,0 +1,153 @@
+<!-- views/services.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - MonEntreprise</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-brand">🏢 MonEntreprise</a>
+            <ul class="nav-links">
+                <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Accueil</a></li>
+                <li><a href="/services" class="<%= currentPage === 'services' ? 'active' : '' %>">Nos Services</a></li>
+                <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contactez-nous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Nos Services</h1>
+            
+            <div class="section">
+                <h2>🔧 Solutions Complètes</h2>
+                <p>
+                    Nous offrons une gamme complète de services adaptés aux besoins spécifiques 
+                    de chaque client. Notre approche personnalisée garantit des résultats optimaux 
+                    pour votre entreprise.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💻 Développement Web</h3>
+                    <p>
+                        Création de sites web modernes, responsives et optimisés pour le SEO. 
+                        Nous utilisons les dernières technologies pour garantir performance et sécurité.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Sites vitrine et e-commerce</li>
+                        <li>• Applications web personnalisées</li>
+                        <li>• Maintenance et support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>📱 Applications Mobile</h3>
+                    <p>
+                        Développement d'applications mobiles natives et hybrides pour iOS et Android. 
+                        Interface intuitive et expérience utilisateur optimale.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Applications iOS/Android</li>
+                        <li>• Design UX/UI</li>
+                        <li>• Publication sur les stores</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🎨 Design Graphique</h3>
+                    <p>
+                        Services de design complets pour votre identité visuelle. 
+                        Du logo aux supports marketing, nous créons des visuels impactants.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Identité visuelle et logos</li>
+                        <li>• Supports print et digital</li>
+                        <li>• Illustrations personnalisées</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>📊 Conseil Stratégique</h3>
+                    <p>
+                        Accompagnement dans la définition et mise en œuvre de votre stratégie digitale. 
+                        Analyse, conseils et plan d'action personnalisés.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Audit digital</li>
+                        <li>• Stratégie marketing</li>
+                        <li>• Formation équipes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🔐 Sécurité & Infrastructure</h3>
+                    <p>
+                        Solutions de sécurité informatique et gestion d'infrastructure. 
+                        Protection de vos données et optimisation de vos systèmes.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Audit de sécurité</li>
+                        <li>• Sauvegarde et récupération</li>
+                        <li>• Monitoring 24/7</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🚀 Transformation Digitale</h3>
+                    <p>
+                        Accompagnement complet dans votre transformation digitale. 
+                        Modernisation des processus et optimisation des performances.
+                    </p>
+                    <ul style="margin-top: 1rem; color: #666;">
+                        <li>• Automatisation des processus</li>
+                        <li>• Outils collaboratifs</li>
+                        <li>• Formation et support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Notre Processus</h2>
+                <div class="services-grid">
+                    <div class="service-card" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));">
+                        <h3>1. Analyse</h3>
+                        <p>Étude approfondie de vos besoins et objectifs pour définir la meilleure stratégie.</p>
+                    </div>
+                    <div class="service-card" style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));">
+                        <h3>2. Conception</h3>
+                        <p>Élaboration détaillée du projet avec validation à chaque étape importante.</p>
+                    </div>
+                    <div class="service-card" style="background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));">
+                        <h3>3. Réalisation</h3>
+                        <p>Développement et mise en œuvre avec un suivi rigoureux de la qualité.</p>
+                    </div>
+                    <div class="service-card" style="background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));">
+                        <h3>4. Livraison</h3>
+                        <p>Déploiement, formation et accompagnement pour une prise en main optimale.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));">
+                <h2>💬 Discutons de Votre Projet</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Chaque projet est unique. Contactez-nous pour une consultation personnalisée !
+                </p>
+                <a href="/contact" class="btn">Demander un Devis</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MonEntreprise. Tous droits réservés.</p>
+        <p>Heures d'ouverture : Lundi - Vendredi, 9h00 - 17h00</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- views/404.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - MonEntreprise</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-brand">🏢 MonEntreprise</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/services">Nos Services</a></li>
+                <li><a href="/contact">Contactez-nous</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="error-page">
+                <h1>404</h1>
+                <h2 style="color: #667eea; margin-bottom: 2rem;">Page Non Trouvée</h2>
+                
+                <div style="font-size: 4rem; margin-bottom: 2rem;">🔍</div>
+                
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
+                    Oops ! La page que vous recherchez semble avoir disparu...
+                </p>
+                
+                <div style="background: rgba(102, 126, 234, 0.1); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                    <h3>🧭 Où souhaitez-vous aller ?</h3>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="/" class="btn">🏠 Accueil</a>
+                        <a href="/services" class="btn">💼 Nos Services</a>
+                        <a href="/contact" class="btn">📞 Contact</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <button onclick="history.back()" class="btn" style="background: linear-gradient(135deg, #95a5a6, #7f8c8d);">
+                        ← Retour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MonEntreprise. Tous droits réservés.</p>
+        <p>Heures d'ouverture : Lundi - Vendredi, 9h00 - 17h00</p>
+    </footer>
+</body>
+</html>

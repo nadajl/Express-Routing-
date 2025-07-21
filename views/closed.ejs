@@ -1,0 +1,93 @@
+<!-- views/closed.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - MonEntreprise</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+    <div class="closed-page">
+        <div class="icon">🔒</div>
+        <h1>Service Temporairement Fermé</h1>
+        
+        <div style="background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 15px; margin: 2rem 0; border: 2px solid rgba(231, 76, 60, 0.3);">
+            <h2 style="color: #e74c3c; margin-bottom: 1rem;">⏰ Heures d'Ouverture</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                <strong>Lundi - Vendredi : 9h00 - 17h00</strong>
+            </p>
+            <p style="font-size: 1rem; color: #666;">
+                Nous sommes actuellement fermés. Revenez pendant nos heures d'ouverture !
+            </p>
+        </div>
+        
+        <div style="background: rgba(102, 126, 234, 0.1); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+            <h3>📅 Actuellement</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                <strong><%= currentDay %></strong> - <strong><%= currentTime %></strong>
+            </p>
+            <p style="color: #666;">
+                Notre site web n'est accessible que pendant les heures ouvrables pour mieux vous servir.
+            </p>
+        </div>
+        
+        <div style="background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+            <h3>📞 Besoin d'Aide Urgente ?</h3>
+            <p style="margin-bottom: 1rem;">
+                Pour les urgences, vous pouvez nous contacter par :
+            </p>
+            <p style="font-size: 1.1rem;">
+                📧 <strong>contact@monentreprise.fr</strong><br>
+                📱 <strong>+33 1 23 45 67 89</strong>
+            </p>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                Nous répondrons à votre message dès l'ouverture de nos bureaux.
+            </p>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <button onclick="location.reload()" class="btn">
+                🔄 Actualiser la Page
+            </button>
+        </div>
+        
+        <div style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+            <p>La page se rafraîchira automatiquement dans <span id="countdown">60</span> secondes</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MonEntreprise. Tous droits réservés.</p>
+        <p>Heures d'ouverture : Lundi - Vendredi, 9h00 - 17h00</p>
+    </footer>
+
+    <script>
+        // Compte à rebours automatique
+        let seconds = 60;
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                location.reload();
+            }
+        }, 1000);
+        
+        // Vérification périodique des heures d'ouverture
+        setInterval(() => {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            
+            // Si on est en heures ouvrables, recharger la page
+            if (day >= 1 && day <= 5 && hour >= 9 && hour < 17) {
+                location.reload();
+            }
+        }, 30000); // Vérifier toutes les 30 secondes
+    </script>
+</body>
+</html>
